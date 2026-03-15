@@ -4,7 +4,23 @@
 <title>public vpkg repo</title>
 </head>
 <body>
-<h1>this is not an actual website <sup>use vpkg add-repo p1xelpp.github.com</sup></h1>
-<p>why are you reading this, this repo is for vpkg packages</p>
+<h1>this is not an actual website <sup>use vpkg add-repo p1xelpp.github.com</sup>, anyways here is the package list</h1>
+  <ul id="pkglist"></ul>
+
+<script>
+fetch("index.json")
+  .then(r => r.json())
+  .then(data => {
+    const list = document.getElementById("pkglist");
+    data.packages.forEach(pkg => {
+      const li = document.createElement("li");
+      li.innerHTML = `<b>${pkg.name}</b> — <a href="${pkg.url}">download</a>`;
+      list.appendChild(li);
+    });
+  })
+  .catch(err => {
+    document.getElementById("pkglist").innerHTML = "Failed to load package list.";
+  });
+</script>
 </body>
 </html>
