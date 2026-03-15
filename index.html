@@ -44,6 +44,22 @@ fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/contents/`)
     document.getElementById("filelist").innerHTML = "Failed to load file list.";
   });
 </script>
+<h2>Packages Folder</h2>
+<ul id="pkgfolder"></ul>
+
+<script>
+fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/contents/packages`)
+  .then(r => r.json())
+  .then(files => {
+    const list = document.getElementById("pkgfolder");
+
+    files.forEach(file => {
+      const li = document.createElement("li");
+      li.innerHTML = `<a href="packages/${file.name}">${file.name}</a>`;
+      list.appendChild(li);
+    });
+  });
+</script>
 
 </body>
 </html>
