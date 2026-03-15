@@ -1,4 +1,4 @@
-#this is the repo of packages, and EVERYONE can upload here
+#this is the repo of packages, and EVERYONE can upload here (best look at the raw file)
 
 how to make a .vpkg
 1. make a folder with the name of your package
