@@ -22,5 +22,28 @@ fetch("index.json")
     document.getElementById("pkglist").innerHTML = "Failed to load package list.";
   });
 </script>
+<h2>Repository Files</h2>
+<ul id="filelist"></ul>
+
+<script>
+const repoOwner = "p1xelpp";
+const repoName = "p1xelpp.github.io";
+
+fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/contents/`)
+  .then(r => r.json())
+  .then(files => {
+    const list = document.getElementById("filelist");
+
+    files.forEach(file => {
+      const li = document.createElement("li");
+      li.innerHTML = `<a href="${file.path}">${file.name}</a>`;
+      list.appendChild(li);
+    });
+  })
+  .catch(err => {
+    document.getElementById("filelist").innerHTML = "Failed to load file list.";
+  });
+</script>
+
 </body>
 </html>
