@@ -1,0 +1,10 @@
+{
+    "packages":[
+        {
+            "name": "goofyahhpackage",
+            "version": "1.0",
+            "description": "this package doesnt do ANYTHING",
+            "url": "https://github.com/p1xelpp/vpkg/tree/main/packages/goofyahhpackaage.vpkg"
+        }
+    ]
+}
