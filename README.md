@@ -1,6 +1,6 @@
 #this is the repo of packages, and EVERYONE can upload here
 
-**how to make a .vpkg**
+how to make a .vpkg
 1. make a folder with the name of your package
 2. give it this structure:
 >  <pkg name>
@@ -15,7 +15,7 @@
 >  |
 >  |--|---<dependencies here>
    --------------------------------------------------
-   **make ur own repo?**
+   make ur own repo?
    <repo map>
    |
    |---index.json (im to lazy to type so look at index.json urself with nano .vpkg/index1.json or samthin
