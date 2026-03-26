@@ -4,7 +4,23 @@
     <title>damn bro what are u clickn on</title>
   </head>
   <body>
-    <p>WHAT ARE YOU CLICKING ON!!!!!!</p>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/tGsTpwRCVP0?si=c0tFqthrPBt4TO42" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <p>curios guy i guess</p>
+    <button id="unmute-btn">CLICK TO SEE THE SECRET THATS NoT SECRET!!!!</button>
+
+    <iframe id="chicken" width="560" height="315"
+      src="https://www.youtube.com/embed/tGsTpwRCVP0?si=Lu4gaF4Uy4cCLcUB?mute=1"
+      title="cool"
+      frameborder="0"
+      allow="autoplay; encrypted-media; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  
+    <script>
+      document.getElementById('unmute-btn').onclick = () => {
+        const iframe = document.getElementById('chicken');
+        iframe.src = iframe.src.replace('mute=1', 'mute=0&autoplay=1');
+      };
+  </script>
+
   </body>
 </html>
