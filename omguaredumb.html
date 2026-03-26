@@ -5,22 +5,27 @@
   </head>
   <body>
     <p>curios guy i guess</p>
+
     <button id="unmute-btn">CLICK TO SEE THE SECRET THATS NoT SECRET!!!!</button>
 
-    <iframe id="chicken" width="560" height="315"
-      src="https://www.youtube.com/embed/tGsTpwRCVP0?si=Lu4gaF4Uy4cCLcUB?mute=1"
-      title="cool"
-      frameborder="0"
-      allow="autoplay; encrypted-media; picture-in-picture"
-      allowfullscreen>
-    </iframe>
-  
+    <!-- Video verborgen tot klik -->
+    <div id="video-container" style="display:none;">
+      <iframe id="chicken" width="560" height="315"
+        src="https://www.youtube.com/embed/tGsTpwRCVP0?mute=1"
+        title="cool"
+        frameborder="0"
+        allow="autoplay; encrypted-media; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+
     <script>
       document.getElementById('unmute-btn').onclick = () => {
+        document.getElementById('video-container').style.display = 'block';
         const iframe = document.getElementById('chicken');
         iframe.src = iframe.src.replace('mute=1', 'mute=0&autoplay=1');
       };
-  </script>
+    </script>
 
   </body>
 </html>
