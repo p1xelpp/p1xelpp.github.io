@@ -1,26 +1,21 @@
-#this is the repo of packages, and EVERYONE can upload here (best look at the raw file)
+.azertypkg sctructure
 
-how to make a .vpkg
-1. make a folder with the name of your package
-2. give it this structure:
->  <pkg name>
->  |
->  |--info.txt  (contents: <package name> arch<arch> mode <user or dev (in this case dev, where not makin it for the avg joe)>
->  |
->  |----exec
->  |--|
->  |--|---<executables here>
->  |
->  |----deps
->  |
->  |--|---<dependencies here>
-   --------------------------------------------------
-   make ur own repo?
-   <repo map>
-   |
-   |---index.json (im to lazy to type so look at index.json urself with nano .vpkg/index1.json or samthin
-   |
-   |-----packages
-   |
-   |--|---<packages here>
-   ------------------------
+/
+---info.txt
+---exec
+------(executables here)
+---deps
+------(dependecies here)
+end
+
+repo structure
+
+/
+---packages
+------(ur cool packages here)
+---index.json
+
+
+for whats needed in the repo, JUST LOOK AT THE REPO
+to have a example of the package
+its just a .zip T_T
