@@ -95,21 +95,42 @@
    <button id="jumpscareBtn" class="glass" style="padding: 14px 40px;">&nbsp;</button>
  </p>
 
- <!-- Hidden jumpscare video -->
- <div id="jumpscareVideo" style="display:none; margin-top:20px;">
-  <iframe width="560" height="315"
-    src="https://www.youtube.com/embed/4bPQYVytsHo?si=D6fih7Vx3K_VNvZ-"
-    title="YouTube video player"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    referrerpolicy="strict-origin-when-cross-origin"
-    allowfullscreen>
-  </iframe>
- </div>
+ <!-- Hidden jumpscare container (iframe gets injected here) -->
+ <div id="jumpscareVideo" style="display:none; margin-top:20px;"></div>
 
+ <!-- LOUD AUTOPLAY JUMPSCARE SCRIPT -->
  <script>
-   document.getElementById("jumpscareBtn").onclick = function() {
+   document.getElementById("jumpscareBtn").onclick = function () {
+     // Show container
      document.getElementById("jumpscareVideo").style.display = "block";
+
+     // Load YouTube API
+     var tag = document.createElement('script');
+     tag.src = "https://www.youtube.com/iframe_api";
+     document.body.appendChild(tag);
+
+     var player;
+
+     // API callback
+     window.onYouTubeIframeAPIReady = function () {
+       player = new YT.Player('jumpscareVideo', {
+         height: '315',
+         width: '560',
+         videoId: '4bPQYVytsHo',
+         playerVars: {
+           autoplay: 1,
+           mute: 1
+         },
+         events: {
+           'onReady': function () {
+             setTimeout(() => {
+               player.unMute();
+               player.setVolume(100);
+             }, 150);
+           }
+         }
+       });
+     };
    };
  </script>
 
