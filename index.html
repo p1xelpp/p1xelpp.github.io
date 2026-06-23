@@ -34,6 +34,7 @@
         background: rgba(255, 255, 255, 0.08);
         border: 1px solid rgba(255, 255, 255, 0.15);
         transition: 0.15s;
+        cursor: pointer;
       }
 
       .glass:hover {
@@ -83,10 +84,33 @@
    <a class="glass" href="https://p1xelpp.github.io/Block-Game">here</a> cool.
  </p>
 
- <!-- NEW BUTTON -->
+ <!-- my property button -->
  <p>my property:
    <a class="glass" href="https://p1xelpp.github.io/hippedy-hoppedy.html">|-----------------|</a>
  </p>
+
+ <!-- EMPTY JUMPSCARE BUTTON -->
+ <p>
+   <button id="jumpscareBtn" class="glass" style="padding: 14px 40px;">&nbsp;</button>
+ </p>
+
+ <!-- Hidden jumpscare video -->
+ <div id="jumpscareVideo" style="display:none; margin-top:20px;">
+  <iframe width="560" height="315"
+    src="https://www.youtube.com/embed/4bPQYVytsHo?si=D6fih7Vx3K_VNvZ-"
+    title="YouTube video player"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allowfullscreen>
+  </iframe>
+ </div>
+
+ <script>
+   document.getElementById("jumpscareBtn").onclick = function() {
+     document.getElementById("jumpscareVideo").style.display = "block";
+   };
+ </script>
 
  <p>Do NOT CLiCK!!!!!!!!
    <a class="noclick" href="https://p1xelpp.github.io/omguaredumb.html">.</a>
